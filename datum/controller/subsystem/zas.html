@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;controller&#x2F;subsystem&#x2F;zas - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/controller/subsystem/zas.html#var">Var Details</a> - <a href="datum/controller/subsystem/zas.html#proc">Proc Details</a></header>
+<main>
+<h1>zas <aside>/<a href="datum.html">datum</a>/<a href="datum/controller/subsystem.html">controller/subsystem</a>/<a href="datum/controller/subsystem/zas.html">zas</a></aside>
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L65">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 65"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#var/last_process">last_process</a></th><td>The last process, as a string, before the previous run ended.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/Reboot">Reboot</a></th><td>Stops processing while all ZAS-controlled airs and fires are nulled and the subsystem is reinitialized.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/add_zone">add_zone</a></th><td>//////TILES//////////
+///////DEFERRED TILES//////////
+///////EDGES//////////
+///////FIRES//////////
+///////HOTSPOTS//////////
+///////ZONES//////////
+Adds a zone to the subsystem, gives it's identifer, and marks it for update.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/air_blocked">air_blocked</a></th><td>Checks to see if air can flow between A and B.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/connect">connect</a></th><td>Forms a /connection/ between two turfs.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/equivalent_pressure">equivalent_pressure</a></th><td>Wrapper for zoneA.air.compare(zoneB.air)</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/fire">fire</a></th><td>LAVALAND SETUP</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/fuck_lavaland">fuck_lavaland</a></th><td>Randomizes the lavaland gas mixture, and sets all lavaland unsimmed turfs to it.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/get_edge">get_edge</a></th><td>Returns <em>AN</em> edge between zones A and B, if one exists. Calls recheck() on it.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/has_same_air">has_same_air</a></th><td>Compare two turfs to see if they are EXACTLY the same.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/mark_edge_active">mark_edge_active</a></th><td>Wakes an edge, adding it to the active process list.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/mark_edge_sleeping">mark_edge_sleeping</a></th><td>Sleeps an edge, preventing it from processing.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/mark_for_update">mark_for_update</a></th><td>Marks a turf for update.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/mark_zone_update">mark_zone_update</a></th><td>Marks a zone for update.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/merge">merge</a></th><td>Merges two zones. Largest by turf count wins.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/remove_edge">remove_edge</a></th><td>Removes an edge from the subsystem.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/zas.html#proc/remove_zone">remove_zone</a></th><td>Removes a zone from the subsystem.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/last_process"><aside class="declaration">var </aside>last_process
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L112">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 112"/></a></h3>
+        <p>The last process, as a string, before the previous run ended.</p><h2 id="proc">Proc Details</h2><h3 id="proc/Reboot"><aside class="declaration">proc </aside>Reboot<aside>() 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L113">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 113"/></a></aside>
+        </h3>
+        <p>Stops processing while all ZAS-controlled airs and fires are nulled and the subsystem is reinitialized.</p><h3 id="proc/add_zone"><aside class="declaration">proc </aside>add_zone<aside>(/<a href="zone.html">zone</a>/z) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L352">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 352"/></a></aside>
+        </h3>
+        <p>//////TILES//////////
+///////DEFERRED TILES//////////
+///////EDGES//////////
+///////FIRES//////////
+///////HOTSPOTS//////////
+///////ZONES//////////
+Adds a zone to the subsystem, gives it's identifer, and marks it for update.</p><h3 id="proc/air_blocked"><aside class="declaration">proc </aside>air_blocked<aside>(/<a href="turf.html">turf</a>/A, /<a href="turf.html">turf</a>/B) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L365">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 365"/></a></aside>
+        </h3>
+        <p>Checks to see if air can flow between A and B.</p><h3 id="proc/connect"><aside class="declaration">proc </aside>connect<aside>(/<a href="turf.html">turf</a>/A, /<a href="turf.html">turf</a>/B) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L394">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 394"/></a></aside>
+        </h3>
+        <p>Forms a /connection/ between two turfs.</p><h3 id="proc/equivalent_pressure"><aside class="declaration">proc </aside>equivalent_pressure<aside>(/<a href="zone.html">zone</a>/A, /<a href="zone.html">zone</a>/B) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L490">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 490"/></a></aside>
+        </h3>
+        <p>Wrapper for zoneA.air.compare(zoneB.air)</p><h3 id="proc/fire"><aside class="parent"><a title="/datum/controller/subsystem" href="datum/controller/subsystem.html#proc/fire">&uarr;</a></aside>fire<aside>(resumed, no_mc_tick) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L192">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 192"/></a></aside>
+        </h3>
+        <p>LAVALAND SETUP</p><h3 id="proc/fuck_lavaland"><aside class="declaration">proc </aside>fuck_lavaland<aside>() 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L539">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 539"/></a></aside>
+        </h3>
+        <p>Randomizes the lavaland gas mixture, and sets all lavaland unsimmed turfs to it.</p><h3 id="proc/get_edge"><aside class="declaration">proc </aside>get_edge<aside>(/<a href="zone.html">zone</a>/A, /<a href="zone.html">zone</a>/B) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L494">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 494"/></a></aside>
+        </h3>
+        <p>Returns <em>AN</em> edge between zones A and B, if one exists. Calls recheck() on it.</p><h3 id="proc/has_same_air"><aside class="declaration">proc </aside>has_same_air<aside>(/<a href="turf.html">turf</a>/A, /<a href="turf.html">turf</a>/B) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L513">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 513"/></a></aside>
+        </h3>
+        <p>Compare two turfs to see if they are EXACTLY the same.</p><h3 id="proc/mark_edge_active"><aside class="declaration">proc </aside>mark_edge_active<aside>(/<a href="connection_edge.html">connection_edge</a>/E) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L480">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 480"/></a></aside>
+        </h3>
+        <p>Wakes an edge, adding it to the active process list.</p><h3 id="proc/mark_edge_sleeping"><aside class="declaration">proc </aside>mark_edge_sleeping<aside>(/<a href="connection_edge.html">connection_edge</a>/E) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L470">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 470"/></a></aside>
+        </h3>
+        <p>Sleeps an edge, preventing it from processing.</p><h3 id="proc/mark_for_update"><aside class="declaration">proc </aside>mark_for_update<aside>(/<a href="turf.html">turf</a>/T) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L447">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 447"/></a></aside>
+        </h3>
+        <p>Marks a turf for update.</p><h3 id="proc/mark_zone_update"><aside class="declaration">proc </aside>mark_zone_update<aside>(/<a href="zone.html">zone</a>/Z) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L460">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 460"/></a></aside>
+        </h3>
+        <p>Marks a zone for update.</p><h3 id="proc/merge"><aside class="declaration">proc </aside>merge<aside>(/<a href="zone.html">zone</a>/A, /<a href="zone.html">zone</a>/B) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L378">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 378"/></a></aside>
+        </h3>
+        <p>Merges two zones. Largest by turf count wins.</p><h3 id="proc/remove_edge"><aside class="declaration">proc </aside>remove_edge<aside>(/<a href="connection_edge.html">connection_edge</a>/E) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L531">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 531"/></a></aside>
+        </h3>
+        <p>Removes an edge from the subsystem.</p><h3 id="proc/remove_zone"><aside class="declaration">proc </aside>remove_zone<aside>(/<a href="zone.html">zone</a>/z) 
+        
+    
+            <a href="https://github.com/DaedalusDock/Gameserver/blob/a57379500281af02c07b346f80951051a69c4d28/code/controllers/subsystem/zas.dm#L358">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;zas.dm 358"/></a></aside>
+        </h3>
+        <p>Removes a zone from the subsystem.</p></main>
+<footer>
+    daedalus.dme
+    <a href="https://github.com/DaedalusDock/Gameserver/tree/a57379500281af02c07b346f80951051a69c4d28">a573795</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>
